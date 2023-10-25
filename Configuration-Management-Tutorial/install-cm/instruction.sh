@@ -6,11 +6,12 @@ ansible all --list-hosts
 ssh-keygen
 cd .ssh/
 cat id_rsa.pub
+
 # Copy the key to another machine
 nano .ssh/authorized_keys
 
 # Test it
 ssh <USERNAME>@<External_IP>
 
-# Ansible ping
+# Test Ansible ping
 ansible all -m ping -u <USERNAME>
