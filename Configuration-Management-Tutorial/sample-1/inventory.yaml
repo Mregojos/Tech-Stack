@@ -1,2 +1,7 @@
 # For prerequisite go to install-cm directory
-
+virtualmachines:
+    hosts:
+        vm01:
+            ansible_host: 35.203.35.236
+        vm02: 
+            ansible_host: 35.203.73.8
