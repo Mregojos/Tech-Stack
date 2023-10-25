@@ -1,2 +1,7 @@
-touch <File_Name>
-mkdir <Dir_Name>
+touch <File>
+mkdir <Dir>
+
+rm [-r|f] <Dir>
+rm <File>
+
+echo $var
