@@ -5,3 +5,6 @@ virtualmachines:
             ansible_host: 35.203.35.236
         vm02: 
             ansible_host: 35.203.73.8
+
+# ansible-inventory -i inventory.yaml --list
+# ansible virtualmachines -m ping -i inventory.yaml -u <USERNAME>
