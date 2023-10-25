@@ -2,3 +2,15 @@
 ansible all --list-hosts
 
 # Set up SSH Connections
+# To generate SSH Key
+ssh-keygen
+cd .ssh/
+cat id_rsa.pub
+# Copy the key to another machine
+nano .ssh/authorized_keys
+
+# Test it
+ssh <USERNAME>@<External_IP>
+
+# Ansible ping
+ansible all -m ping -u <USERNAME>
