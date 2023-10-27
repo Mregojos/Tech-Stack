@@ -22,7 +22,7 @@
 ### Continuous Deployment: ArgoCD
 ### Pipeline Security: SonarQube
 ### Site Reliability Engineering (SRE) Tools: Prometheus, Grafana
-    Logging
-    Observability
-    Monitoring
-    Alerting
+    | Logging
+    | Observability
+    | Monitoring
+    | Alerting
