@@ -83,4 +83,8 @@ sudo
 sudo apt update
 sudo apt install <package name>
 
+# Create SSH Connection
+ssh-keygen
+.ssh/keys/Autorized_Keys # Private and Public Keys
+
 
