@@ -1,5 +1,5 @@
 # Create a new file
-touch <file | file(s)>
+touch <file|file(s)>
 
 # Create a new directory
 mkdir <dir>
@@ -32,6 +32,9 @@ echo $var
 echo "<string>" > <file> # Add
 echo "<string>" >> <file> # Insert
 
+# Print using cat
+cat <text_file>
+
 # Copy
 cp <file> <dir>
 # Copy recursively
@@ -44,10 +47,20 @@ mv <file_name> <new_file_name>
 # All e.g., cd 1*e (1-Sample)
 * 
 
+# Pipe
+| 
+
+# Search from file
+grep 
+
+# Add
+<Command_1> && <Command_2>
+
 # Manual
 man <command>
 
 # Help
+help
 <command> --help
 
 # Tag
