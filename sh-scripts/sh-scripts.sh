@@ -1,16 +1,30 @@
 # Create a new file
-touch <File>
+touch <file | file(s)>
 
 # Create a new directory
-mkdir <Dir>
+mkdir <dir>
 
 # Print working directory
 pwd 
 
+# Change directory
+cd <dir>
+cd ~ # Change to home
+cd .. # Go back once
+
 # Remove a file
 rm <File>
-# Remove a directory
+# Remove a directory (Recursively and Force Deletion)
 rm [-r|f] <Dir>
+
+# Variable Assignment
+<Var_Name> = "<string>"
+export <Var_Name> = "<string>"
+
+# Show script history
+history
+# Delete history
+history -c
 
 # Print
 echo $var
@@ -30,5 +44,30 @@ mv <file_name> <new_file_name>
 # All e.g., cd 1*e (1-Sample)
 * 
 
+# Manual
+man <command>
+
+# Help
+<command> --help
+
+# Tag
+<command> -<t>
+<command> --<tag>
+
+# Curl a webpage
+curl <address>
+
+# Ping an ip address
+ping <IP Address>
+
+# Check user
+whoami
+
+# Super User
+sudo
+
+# Update or install a package
+sudo apt update
+sudo apt install <package name>
 
 
