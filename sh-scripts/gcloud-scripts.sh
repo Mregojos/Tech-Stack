@@ -3,14 +3,14 @@ https://cloud.google.com/cli
 
 # Install gcloud
 
-# Initialize gcloud
-gcloud init
+# gcloud help
+gcloud help
 
 # gcloud version
 gcloud version
 
-# gcloud help
-gcloud help
+# Initialize gcloud
+gcloud init
 
 # gloud authentication
 gcloud auth
@@ -26,6 +26,7 @@ gcloud config get list
 gcloud compute help
 
 # gcloud storage (gsutil)
+gcloud storage <...>
 
 --------------------------------------------
 # Other Google Cloud CLI (gsutil, bq)
