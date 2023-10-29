@@ -87,4 +87,8 @@ sudo apt install <package name>
 ssh-keygen
 .ssh/keys/Autorized_Keys # Private and Public Keys
 
+# Make a file it executable
+chmod +x <FILE_NAME.sh>
 
+# Change permission
+<..>
