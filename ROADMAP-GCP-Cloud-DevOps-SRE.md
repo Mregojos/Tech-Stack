@@ -1,4 +1,4 @@
-# Cloud, DevOps, SRE (Google Cloud / GCP Edition)
+# Cloud, DevOps, SRE Roadmap (Google Cloud / GCP Edition)
 
 ## System Administration
     > Operating System
