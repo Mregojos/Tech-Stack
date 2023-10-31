@@ -2,8 +2,8 @@
 # sh git-push.sh
 
 git add .
-git config user.email "matt@example.com"
-git config user.name "Mregojos"
+git config --global user.email "Matt"
+git config --global user.name "Mregojos"
 git commit -m "Add and modify files"
 git push
 
