@@ -24,13 +24,16 @@ rm [-r|f] <Dir>
 <Var_Name> = "<string>"
 export <Var_Name> = "<string>"
 
+# Print all environment variables
+env
+
 # Show script history
 history
 # Delete history
 history -c
 
 # Print
-echo $var
+echo $<Var_Name>
 # Add or Insert
 echo "<string>" > <file> # Add
 echo "<string>" >> <file> # Insert
@@ -99,6 +102,7 @@ sudo apt update
 sudo apt install <package name>
 
 # Create SSH Connection
+# Useful for Configuration Management
 ssh-keygen
 .ssh/keys/Autorized_Keys # Private and Public Keys
 
