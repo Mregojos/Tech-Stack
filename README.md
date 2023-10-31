@@ -72,7 +72,7 @@
 * ArgoCD
 
 ### Pipeline Code Security
-* SOnarQube
+* SonarQube
 
 ### Logging, Observability, Monitoring, Alerting
 * Grafana: https://grafana.com
