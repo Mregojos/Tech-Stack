@@ -22,8 +22,13 @@ docker build -t -d <IMAGE_TAG> .
 # Run an image
 docker run <...>
 
+# Port-biding
+<...>
+
 # Running container
 docker ps
+# Show all
+docker ps -a 
 
 # Exec
 docker exec -it <CONTAINER_ID> <bash|sh|...>
@@ -36,6 +41,8 @@ docker stop <CONTAINER_ID>
 docker rm -f <CONTAINER_ID>
 # Remove all running containers
 docker rm -f $(docker ps -a -q)
+# Remove docker image with force tag
+docker rmi -f <CONTAINER_ID>
 # Remove all images
 docker rmi -f $(docker images -a -q)
 

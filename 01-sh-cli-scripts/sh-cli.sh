@@ -62,6 +62,9 @@ mv <file_name> <new_file_name>
 # Search from file
 grep 
 
+# Edit text
+sed
+
 # Add
 <Command_1> && <Command_2>
 
