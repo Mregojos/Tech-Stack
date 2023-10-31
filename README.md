@@ -44,9 +44,10 @@
 
 * Google Cloud: https://cloud.google.com
 * Google Cloud Documentation: https://cloud.google.com/docs
-* Google Cloud Architecture Framework: https://cloud.google.com/architecture-framework
+* Google Cloud Architecture: https://cloud.google.com/architecture
+* Google Cloud Architecture Framework: https://cloud.google.com/architecture/framework
 * Google Cloud DevOps: https://cloud.google.com/devops
-* Google Cloud CI/CD: https://cloud.google.com/cicd
+* Google Cloud CI/CD: https://cloud.google.com/ci-cd
 * Google SRE: https://sre.google
 * Google Cloud Certification: https://cloud.google.com/certification
 
