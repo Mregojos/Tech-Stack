@@ -15,5 +15,9 @@
     > Cloud Architeture Fundamentals
 
 ## DevOps and SRE
-    > DevOps Fundamentals
-    > Container
+    > DevOps and SRE Fundamentals
+    > Container and Orchestration
+    > Continuous Integration and Continuous Delivery
+    > Continuous Deloyment
+    > Logging, Observability, Monitoring, Alerting
+    > Development
