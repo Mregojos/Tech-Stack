@@ -1,11 +1,13 @@
 # sh g* 
 # sh git-push.sh
+# https://github.com/mregojos/tech-stack
 
 git add .
 # git config --global user.email "<EMAIL>"
-git config --global user.name "Mregojos"
+git config --global user.name "Matt"
 git commit -m "Add and modify files"
 git push
 
 # username
 # password/token
+
