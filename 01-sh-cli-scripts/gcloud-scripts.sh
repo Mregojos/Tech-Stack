@@ -13,7 +13,7 @@ gcloud version
 gcloud init
 
 # gloud authentication
-gcloud auth
+gcloud auth <...>
 
 # gcloud projects
 # PROJECT_ID should be unique
@@ -25,6 +25,12 @@ gcloud config get list
 # gcloud compute
 gcloud compute help
 
+# gcloud VPC
+gcloud compute networks <...>
+
+# gcloud IAM
+gcloud iam
+
 # gcloud storage (gsutil)
 gcloud storage <...>
 
@@ -35,3 +41,4 @@ gcloud storage <...>
 gsutil mb <BUCKET_NAME>
 
 # bq
+bq <...>

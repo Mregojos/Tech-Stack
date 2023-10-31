@@ -1,6 +1,9 @@
 # Create a new file
 touch <file|file(s)>
 
+# Create or edit file
+nano <file>
+
 # Create a new directory
 mkdir <dir>
 
@@ -31,6 +34,9 @@ echo $var
 # Add or Insert
 echo "<string>" > <file> # Add
 echo "<string>" >> <file> # Insert
+echo """<string>
+<...>
+""" > <file>
 
 # Print using cat
 cat <text_file>
@@ -76,8 +82,17 @@ ping <IP Address>
 # Check user
 whoami
 
+# Disk file
+df [-h|...]
+
+# Disk usage
+du [-h|...]
+
 # Super User
 sudo
+
+# Create a user
+# Change a user
 
 # Update or install a package
 sudo apt update
@@ -92,3 +107,21 @@ chmod +x <FILE_NAME.sh>
 
 # Change permission
 <..>
+
+# Apache2 (Web Server)
+sudo apt update
+sudo apt install apache2 -y
+# /var/html/www
+
+# nginx (Web Server)
+sudo apt update
+sudo apt install nginx -y
+
+# Systemctl
+sudo systemctl start <...>
+sudo systemctl enable <...>
+sudo systemctl restart <...>
+sudo systemctl stop <...>
+
+# Exit shell
+exit

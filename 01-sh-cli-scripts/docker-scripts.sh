@@ -1,4 +1,4 @@
-# Official Docker Documentation official website
+# Official Docker Documentation official website: https://docs.docker.com
 
 # Install docker
 
@@ -19,6 +19,9 @@ docker build -t <IMAGE_TAG> .
 # Build Container Image with image tag and detach mode
 docker build -t -d <IMAGE_TAG> .
 
+# Run an image
+docker run <...>
+
 # Running container
 docker ps
 
@@ -36,8 +39,8 @@ docker rm -f $(docker ps -a -q)
 # Remove all images
 docker rmi -f $(docker images -a -q)
 
-# Prune 
-docker prune <...>
+# Prune network
+docker network prune <...>
 
 # Docker Repository
 docker login
