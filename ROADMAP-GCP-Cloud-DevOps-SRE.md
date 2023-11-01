@@ -10,12 +10,15 @@
 
 ## Cloud Engineering and Architecture
     > Cloud Engineering Fundamentals
+        * GCP Associate Cloud Engineer
     > Infrastructure as Code
     > Configuration Management
     > Cloud Architeture Fundamentals
+        * GCP Professional Cloud Engineer
 
 ## DevOps and SRE
     > DevOps and SRE Fundamentals
+        * GCP Professional Cloud DevOps Engineer
     > Container and Orchestration
     > Continuous Integration and Continuous Delivery
     > Continuous Deloyment
