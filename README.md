@@ -11,6 +11,7 @@
     | Continuous Deployment (GitOps): ArgoCD
     | Pipeline Code Security: SonarQUbe
     | Logging, Observability, Monitoring, Alerting: Grafana, Prometheus
+    | Diagramming Tool: Draw.io
     
     
 ### Cloud Technology (Google Cloud / GCP Edition)
@@ -65,11 +66,11 @@
 * Kubernetes: https://kubernetes.io/docs
 
 ### Continuous Development / Continuous Delivery (CI/CD)
-* Jenkins: jenkins.com/doc
+* Jenkins: https://jenkins.com/doc
 * GitHub Actions
 
 ### Continuous Deployment (GitOps)
-* ArgoCD
+* ArgoCD: https://argo-cd.readthedocs.io
 
 ### Pipeline Code Security
 * SonarQube
@@ -79,6 +80,8 @@
 * Grafana Cloud: https://grafana.com
 * Prometheus
 
+### Diagramming Tool
+* Draw: https://draw.io
 ---
 
-GitHub Repo: https://github.com/mregojos/tech-stack
+GitHub Repository: https://github.com/mregojos/tech-stack
