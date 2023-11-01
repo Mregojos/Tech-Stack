@@ -48,12 +48,13 @@
 * Google Cloud Architecture: https://cloud.google.com/architecture
 * Google Cloud Architecture Framework: https://cloud.google.com/architecture/framework
 * Google Cloud DevOps: https://cloud.google.com/devops
-* Google Cloud CI/CD: https://cloud.google.com/ci-cd
+* Google Cloud CI/CD: https://cloud.google.com/ ci-cd
 * Google SRE: https://sre.google
 * Google Cloud Certification: https://cloud.google.com/certification
 
 ### Infrastructure as Code
 * Terraform: https://terraform.io/docs
+* Terraform Google Cloud Registry
 
 ### Configuration Management
 * Ansible: https://ansible.com/docs
@@ -61,13 +62,18 @@
 ### Container
 * Docker: https://docs.docker.com
 * DOcker Hub: https://hub.docker.com
+* Google Cloud Cloud Build: https://cloud.google.com/build
+* Google Cloud Artifact Registry
 
 ### Container Orchestration
 * Kubernetes: https://kubernetes.io/docs
+* Google Cloud Google Kubernetes Engine (GKE) Documnetation: https://cloud.google.com/kubernetes-engine/docs
 
 ### Continuous Development / Continuous Delivery (CI/CD)
 * Jenkins: https://jenkins.com/doc
 * GitHub Actions
+* Google Cloud Cloud Build: https://cloud.google.com/build
+* Google Cloud Cloud deploy: https://cloud.google.com/deploy
 
 ### Continuous Deployment (GitOps)
 * ArgoCD: https://argo-cd.readthedocs.io
@@ -79,6 +85,7 @@
 * Grafana: https://grafana.com
 * Grafana Cloud: https://grafana.com
 * Prometheus
+* Google Cloud Operations Suite
 
 ### Diagramming Tool
 * Draw: https://draw.io
