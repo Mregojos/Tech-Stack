@@ -3,7 +3,7 @@
 # Install git
 
 # git commands that I used most of the time
-git clone <REPO>
+git clone <REPOSITORY_NAME>
 # Push changes
 git add .
 git config global --user.email "<EMAIL>"
@@ -13,6 +13,30 @@ git push
 
 # Pull
 git pull
+
+# Google Cloud Cloud Repositories
+gcloud source repos clone <REPO_NAME> --project="<PROJECT_ID>"
+# Useful commands
+
+# Branch
+git branch
+# Add a branch
+git branch <BRANCH_NAME>
+# List all brahches
+git branch -l
+# Switch a branch
+git switch <BRANCH_NAME>
+# git add .
+# git commit -m "<MESSAGE>"
+# Pus to the branch
+git push --set-upstream origin <BRANCH_NAME>
+
+# Merge
+git switch <BRANCH_NAME>
+git merge <ANOTHER_BRANCH_NAME>
+# git add .
+# git commit -m "<MESSAGE>"
+# git push
 
 ###############
 # From git help
