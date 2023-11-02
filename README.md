@@ -29,7 +29,6 @@
     | Data Warehousing: BigQuery
 
 ---
-
 ## Resources:
 
 ### Programming Language (Automation)

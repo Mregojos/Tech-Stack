@@ -21,6 +21,11 @@
         * GCP Professional Cloud DevOps Engineer
     > Container and Orchestration
     > Continuous Integration and Continuous Delivery
+        Plan -> Code -> Build -> Test -> Release -> Deploy -> Operate -> Monitor
     > Continuous Deloyment
     > Logging, Observability, Monitoring, Alerting
+        > Observability
+            * Metrics
+            * Logs
+            * Traces
     > Development
