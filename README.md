@@ -89,6 +89,7 @@
 ### Diagramming Tool
 * Draw: https://draw.io
 * Google Cloud Diagramming tool
+* Tech Icons
 
 ---
 

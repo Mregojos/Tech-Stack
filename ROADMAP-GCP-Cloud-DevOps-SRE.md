@@ -19,13 +19,20 @@
 ## DevOps and SRE
     > DevOps and SRE Fundamentals
         * GCP Professional Cloud DevOps Engineer
+        * https://sre.google
     > Container and Orchestration
     > Continuous Integration and Continuous Delivery
         Plan -> Code -> Build -> Test -> Release -> Deploy -> Operate -> Monitor
     > Continuous Deloyment
     > Logging, Observability, Monitoring, Alerting
+        > Loggin
         > Observability
             * Metrics
             * Logs
             * Traces
+        > Monitoring
+        > Alerting
     > Development
+        * Presentation Tier
+        * Application Tier
+        * Data Tier
