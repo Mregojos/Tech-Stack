@@ -2,7 +2,7 @@
 
 ### Tech Stack for Cloud, DevOps, and SRE (Open-Source)
     | Programming Language (Automation): Shell/Bash, Python, SQL
-    | Version Control: Git, GitHub
+    | Version Control: Git, GitHub, Bitbucket
     | Infrastructure as Code: Terraform
     | Configuration Management: Ansible
     | Container: Docker
