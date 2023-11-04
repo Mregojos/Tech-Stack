@@ -22,10 +22,11 @@
         * https://sre.google
     > Container and Orchestration
     > Continuous Integration and Continuous Delivery
-        Plan -> Code -> Build -> Test -> Release -> Deploy -> Operate -> Monitor
+        * Plan -> Code -> Build -> Test -> Release -> Deploy -> Operate -> Monitor
     > Continuous Deloyment
+        * GitOps
     > Logging, Observability, Monitoring, Alerting
-        > Loggin
+        > Logging
         > Observability
             * Metrics
             * Logs
@@ -33,6 +34,6 @@
         > Monitoring
         > Alerting
     > Development
-        * Presentation Tier
-        * Application Tier
-        * Data Tier
+        * Presentation Tier (Frontend)
+        * Application Tier (Backend)
+        * Data Tier (Backend)
