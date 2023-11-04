@@ -21,9 +21,14 @@ gcloud projects create <PROJECT_ID> --name=<PROJECT_NAME>
 
 # gcloud config
 gcloud config get list
+# GHet the project id
+gcloud config get project
 
 # gcloud compute
 gcloud compute help
+
+# gcloud compute insatnce
+gcloud compute instances <...>
 
 # gcloud VPC
 gcloud compute networks <...>

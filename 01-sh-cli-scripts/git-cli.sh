@@ -2,13 +2,16 @@
 
 # Install git
 
-# git commands that I used most of the time
-git clone <REPOSITORY_NAME>
+# git commands
+git clone <REPOSITORY>
+# Specify username
+git clone <https://<USERNAME>@<REPOSITORY>
+git clone <https://<USERNAME>@REPOSITORY.git>
 # Push changes
 git add .
 git config global --user.email "<EMAIL>"
 git config global --user.email "<NAME>"
-git commit -m "Add and modify files"
+git commit -m "Add and modify files | <MESSAGE>"
 git push
 
 # Pull
@@ -29,7 +32,7 @@ git branch -l
 git switch <BRANCH_NAME>
 # git add .
 # git commit -m "<MESSAGE>"
-# Pus to the branch
+# Push to the branch
 git push --set-upstream origin <BRANCH_NAME>
 
 # Merge
