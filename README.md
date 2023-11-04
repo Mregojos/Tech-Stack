@@ -19,7 +19,7 @@
     | Networking: VPC
     | Database: Cloud SQL
     | Security: IAM
-    | Serverless: Cloud Functions, Cloud Run
+    | Serverless: Cloud Run, Cloud Functions
     | Container: Cloud Build
     | Container Registry: Artifact Registry
     | Container Orchestration: Google Kubernetes Engine
@@ -39,6 +39,7 @@
 ### Git and GitHub
 * Git
 * GitHub: https://github.com
+* Bitbucket: https://bitbucket.org
 
 ### Cloud Technology (Google Cloud / GCP Edition)
 
@@ -53,7 +54,7 @@
 
 ### Infrastructure as Code
 * Terraform: https://terraform.io/docs
-* Terraform Google CLoud Registry GitHub
+* Terraform Google Cloud Registry GitHub
 * Terraform Google Cloud Registry
 
 ### Configuration Management
@@ -61,7 +62,7 @@
 
 ### Container
 * Docker: https://docs.docker.com
-* DOcker Hub: https://hub.docker.com
+* Docker Hub: https://hub.docker.com
 * Google Cloud Cloud Build: https://cloud.google.com/build
 * Google Cloud Artifact Registry
 
@@ -79,19 +80,25 @@
 * ArgoCD: https://argo-cd.readthedocs.io
 
 ### Pipeline Code Security
-* SonarQube
+* SonarQube: https://sonarqube.com
 
 ### Logging, Observability, Monitoring, Alerting
 * Grafana: https://grafana.com
 * Grafana Cloud: https://grafana.com
-* Prometheus
-* Google Cloud Operations Suite
+* Prometheus: https://prometheus.io
+* Helm: https://helm.sh
+* Google Cloud Operations Suite: https://cloud.google.com/stackdriver
 
 ### Diagramming Tool
 * Draw: https://draw.io
 * Google Cloud Diagramming tool
 * Tech Icons
 
+### Database
+* Google Cloud Cloud SQL: https://cloud.google.com/sql
+
+### Security
+* Google Cloud IAM: https://cloud.google.com/IAM
 ---
 
 GitHub Repository: https://github.com/mregojos/tech-stack
