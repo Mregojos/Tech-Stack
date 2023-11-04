@@ -102,7 +102,9 @@ sudo
 
 # Update or install a package
 sudo apt update
-sudo apt install <package name>
+sudo apt install <PACKAGE_NAME>
+# Remove
+sudo apt remove <PACKAGE_NAME>
 
 # Create SSH Connection
 # Useful for Configuration Management
@@ -118,7 +120,7 @@ chmod +x <FILE_NAME.sh>
 # Apache2 (Web Server)
 sudo apt update
 sudo apt install apache2 -y
-# /var/html/www
+# /var/html/www/
 
 # nginx (Web Server)
 sudo apt update
@@ -130,5 +132,17 @@ sudo systemctl enable <...>
 sudo systemctl restart <...>
 sudo systemctl stop <...>
 
+# Directory / Tree
+sudo apt update
+sudo apt install tree
+
+# cmatrix
+sudo apt update
+sudo apt install cmatrix
+
 # Exit shell
 exit
+
+---
+# FUNCTIONS
+# LOOPS
