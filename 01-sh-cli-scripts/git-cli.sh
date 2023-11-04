@@ -42,6 +42,9 @@ git merge <ANOTHER_BRANCH_NAME>
 # git commit -m "<MESSAGE>"
 # git push
 
+# Best Practice: Don't add secrets to repositories
+.gitignore
+
 ###############
 # From git help
 usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
