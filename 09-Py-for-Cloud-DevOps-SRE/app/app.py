@@ -2,6 +2,7 @@
 import streamlit as st
 import sqlite3
 import os
+import time
 
 # Header
 st.subheader("Simple Notepad :notebook:")
@@ -22,34 +23,42 @@ else:
     con = sqlite3.connect(database_name)
     # Database Cursor (cur)
     cur = con.cursor()
-    cur.execute("CREATE TABLE notes(name, note)")
+    cur.execute("CREATE TABLE notes(name, note, time)")
     con.commit()
 
 # Inputs
 name = st.text_input("Your Name here")
 note = st.text_area("Add Note here")
 if st.button("Add a note"):
-    st.write(name,":", note)
+    time = time.strftime("Date: %Y-%m-%d | Time: %H:%M:%S UTC")
+    st.write(f""" \n
+            ### :pencil: {note} \n
+            :man: {name} \n
+            :watch: {time}""")
     st.success("Successful Added.")
     # st.balloons()
     ### Insert into adatabase
     cur.execute(f"""
             INSERT INTO notes VALUES
-            ("{name}", "{note}")
+            ("{name}", "{note}", "{time}")
             """)
     con.commit()
     
 # Previous Notes 
 st.subheader("",divider="rainbow")
-st.write("**Previous Notes**")
+st.write("## *Previous Notes*")
 # Write the data
 result = cur.execute("""
                     SELECT * 
                     FROM notes
-                    ORDER BY name DESC
+                    ORDER BY time DESC
                     """)
-for name, note in result.fetchall():
-    st.write(name,":", note)
+for name, note, time in result.fetchall():
+    st.write(f""" \n
+            ### :pencil: {note} \n
+            :man: {name} \n
+            :watch: {time}""")
+    st.subheader("",divider="gray")
     
 # Close Connection
 con.close()
