@@ -13,17 +13,17 @@ st.subheader("",divider="rainbow")
 
 # Variable
 database_name = "notes.db"
-con = sqlite3.connect(database_name)
-cur = con.cursor()
 
 # Create a database
 if database_name in os.listdir():
-    pass
+    con = sqlite3.connect(database_name)
+    cur = con.cursor()
 else:
     con = sqlite3.connect(database_name)
     # Database Cursor (cur)
     cur = con.cursor()
     cur.execute("CREATE TABLE notes(name, note)")
+    con.commit()
 
 # Inputs
 name = st.text_input("Your Name here")
