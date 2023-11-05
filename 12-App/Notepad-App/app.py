@@ -5,7 +5,7 @@ import os
 import time
 
 # Header
-st.subheader("Simple Notepad :notebook:")
+st.write("# Notepad :notebook:")
 st.caption("""
             Add your thoughts here! It will be stored in a database! \n
             :warning: :red[Do not add sensitive data].
@@ -28,7 +28,7 @@ else:
 
 # Inputs
 name = st.text_input("Your Name here")
-note = st.text_area("Add Note here")
+note = st.text_area("Add Note here",)
 if st.button("Add a note"):
     time = time.strftime("Date: %Y-%m-%d | Time: %H:%M:%S UTC")
     st.write(f""" \n
@@ -46,7 +46,7 @@ if st.button("Add a note"):
     
 # Previous Notes 
 st.subheader("",divider="rainbow")
-st.write("## *Previous Notes*")
+st.write("### *Previous Notes*")
 # Write the data
 result = cur.execute("""
                     SELECT * 
@@ -55,8 +55,8 @@ result = cur.execute("""
                     """)
 for name, note, time in result.fetchall():
     st.write(f""" \n
-            ### :pencil: {note} \n
-            :man: {name} \n
+            #### :pencil: {note} \n
+            :man: Written By: **{name}** \n
             :watch: {time}""")
     st.subheader("",divider="gray")
     
