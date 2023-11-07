@@ -35,11 +35,11 @@ note = st.text_area("Note",)
 if st.button("Add a note"):
     time = time.strftime("Date: %Y-%m-%d | Time: %H:%M:%S UTC")
     st.write(f""" \n
-            ### :pencil: {header} \n
-            {note}
+            ##### :pencil: {header} \n
+            #### {note} \n
             :man: {name} \n
             :watch: {time}""")
-    st.success("Successful Added.")
+    st.success("Successfully Added.")
     # st.balloons()
     ### Insert into adatabase
     SQL = "INSERT INTO notes (name, header, note, time) VALUES(%s, %s, %s, %s);"
@@ -56,10 +56,10 @@ cur.execute("""
             FROM notes
             ORDER BY time DESC
             """)
-for name, header, note, time in cur.fetchall():
+for _, name, header, note, time in cur.fetchall():
     st.write(f""" \n
-            ### :pencil: {header} \n
-            {note}
+            ##### :pencil: {header} \n
+            #### {note} \n
             :man: {name} \n
             :watch: {time}""")
     st.subheader("",divider="gray")
