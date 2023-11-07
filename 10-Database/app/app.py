@@ -5,10 +5,29 @@ import os
 import time
 from env import *
 
+#----------Page Configuration----------# 
 st.set_page_config(page_title="Matt Cloud Tech",
                    page_icon=":cloud:",
                    menu_items={
                        'About':"# Matt Cloud Tech"})
+#----------About Me Section----------#
+st.title(":cloud: Matt Cloud Tech")
+st.subheader("", divider="rainbow")
+
+st.write("""
+        ### Good day :wave:.
+        ### My name is :blue[Matt]. I am a Cloud Technology Enthusiast.
+        ### Currently, I am learning and building Cloud Infrastructure, Data and CI/CD Pipelines, and Intelligent Systems. 
+        """)
+
+st.divider()
+st.write(":link: :computer: [Personal Website](https://)")
+st.write(":link: :book: [Project Repository](https://)")
+st.write(":link: :notebook: [Blog](https://)")
+st.write(":link: :hand: [Connect with me](https://)")
+
+#----------Notepad----------#
+# Notepad Section
 # Header
 st.header("Notepad :notebook:",divider="rainbow")
 st.caption("""
@@ -77,6 +96,64 @@ for id, name, header, note, time in cur.fetchall():
         con.commit()
         st.success("Successfully Deleted.")
     st.subheader("",divider="gray")
+    
+# Close Connection
+cur.close()
+con.close()
+
+#----------Counter----------#
+# Title
+st.header("Counter App")
+st.caption("""
+            Count every request in this app.
+            """)
+st.subheader("",divider="rainbow")
+
+# Variable
+database_name = DBNAME
+
+con = psycopg2.connect(f"""
+                       dbname={DBNAME}
+                       user={USER}
+                       host={HOST}
+                       port={PORT}
+                       password={PASSWORD}
+                       """)
+cur = con.cursor()
+# Create a table if not exists
+cur.execute("CREATE TABLE IF NOT EXISTS counter(id serial PRIMARY KEY, view int, time varchar)")
+con.commit()
+
+# Counter
+import time
+time = time.strftime("Date: %Y-%m-%d | Time: %H:%M:%S UTC")
+view = 1
+### Insert into a database
+SQL = "INSERT INTO counter (view, time) VALUES(%s, %s);"
+data = (view, time)
+cur.execute(SQL, data)
+con.commit()
+
+# Total views
+cur.execute("""
+                SELECT SUM(view) 
+                FROM counter
+                """)
+st.write(f"### Total views: **{cur.fetchone()[0]}**")
+
+# Current view
+st.write(f"Current: {time}")
+# Previous hits
+st.divider()
+st.write("### *Previous Views*")
+# Write the data
+cur.execute("""
+            SELECT * 
+            FROM counter
+            ORDER BY time DESC
+            """)
+for _, _, time in cur.fetchall():
+    st.text(f"{time}")
     
 # Close Connection
 cur.close()
