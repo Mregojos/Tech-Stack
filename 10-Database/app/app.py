@@ -5,14 +5,16 @@ import os
 import time
 from env import *
 
+st.set_page_config(page_title="Matt Cloud Tech",
+                   page_icon=":cloud:",
+                   menu_items={
+                       'About':"# Matt Cloud Tech"})
 # Header
-st.write("# Notepad :notebook:")
+st.header("Notepad :notebook:",divider="rainbow")
 st.caption("""
             Add your thoughts here! It will be stored in a database! \n
-            :warning: :red[Do not add sensitive data].
+            :warning: :red[Do not add sensitive data.]
             """)
-st.subheader("",divider="rainbow")
-
 # Variable
 database_name = DBNAME
 
@@ -48,7 +50,7 @@ if st.button("Add a note"):
     con.commit()
     
 # Previous Notes 
-st.subheader("",divider="rainbow")
+st.divider()
 st.write("### *Previous Notes*")
 # Write the data
 cur.execute("""
@@ -67,7 +69,7 @@ for id, name, header, note, time in cur.fetchall():
 #        header = st.text_input(f"Header (ID #: {id})", header)
 #        note = st.text_area(f"Note (ID #: {id})", note)
 #        if st.button(f"CONFIRM UPDATE ID #: {id}"):
-#            cur.execute(f"UPDATE notes SET id={id}, name={name}, header={header}, note={note} WHERE id = {id}")
+#            cur.execute(f"UPDATE notes SET id={id}, name='{name}', header='{header}', note='{note}' WHERE id = {id}")
 #            con.commit()
 #            st.success("Successfully Edited.")
     if st.button(f"DELETE ID #: {id}"):
