@@ -31,7 +31,7 @@ con.commit()
 # Inputs
 name = st.text_input("Your Name")
 header = st.text_input("Header")
-note = st.text_area("Note",)
+note = st.text_area("Note")
 if st.button("Add a note"):
     time = time.strftime("Date: %Y-%m-%d | Time: %H:%M:%S UTC")
     st.write(f""" \n
@@ -56,12 +56,24 @@ cur.execute("""
             FROM notes
             ORDER BY time DESC
             """)
-for _, name, header, note, time in cur.fetchall():
+for id, name, header, note, time in cur.fetchall():
     st.write(f""" \n
             ##### :pencil: {header} \n
             #### {note} \n
             :man: {name} \n
             :watch: {time}""")
+#    if st.button(f"UPDATE ID #: {id}"):
+#        name = st.text_input(f"Your Name (ID #: {id})", name)
+#        header = st.text_input(f"Header (ID #: {id})", header)
+#        note = st.text_area(f"Note (ID #: {id})", note)
+#        if st.button(f"CONFIRM UPDATE ID #: {id}"):
+#            cur.execute(f"UPDATE notes SET id={id}, name={name}, header={header}, note={note} WHERE id = {id}")
+#            con.commit()
+#            st.success("Successfully Edited.")
+    if st.button(f"DELETE ID #: {id}"):
+        cur.execute(f"DELETE FROM notes WHERE id = {id}")
+        con.commit()
+        st.success("Successfully Deleted.")
     st.subheader("",divider="gray")
     
 # Close Connection
