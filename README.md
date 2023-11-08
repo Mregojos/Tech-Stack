@@ -34,8 +34,8 @@
 ## Resources:
 
 ### Programming Language (Automation)
-* Shell Scripting
 * Official Python Docs: https://docs.python.org
+* Shell Scripting
 * SQL
 
 ### Git and GitHub
