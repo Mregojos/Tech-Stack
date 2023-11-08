@@ -20,7 +20,13 @@ st.write("""
         ### My name is :blue[Matt]. I am a Cloud Technology Enthusiast.
         ### Currently, I am learning and building Cloud Infrastructure, Data and CI/CD Pipelines, and Intelligent Systems. 
         """)
-
+agent = st.toggle('**Talk to my Agent**')
+if agent:
+    prompt = st.chat_input("What do you want to say?")
+    if prompt:
+        with st.expander("See Conversations"):
+            st.write(f"User prompt: {prompt}")
+            
 st.divider()
 st.write(":link: :computer: [Personal Website](https://)")
 st.write(":link: :book: [Project Repository](https://)")
@@ -184,3 +190,61 @@ with st.expander("See Previous Views"):
 # Close Connection
 cur.close()
 con.close()
+
+#----------Agent Section----------#
+import time
+st.header("Agent",divider="rainbow")
+st.caption("### Chat with my agent")
+input_name = st.text_input("Your Name:")
+if st.button("name"):
+    name = input_name
+    st.write(f"Your Name for this chat is {name}")
+# Variable
+database_name = DBNAME
+# Connect to a database
+con = psycopg2.connect(f"""
+                       dbname={DBNAME}
+                       user={USER}
+                       host={HOST}
+                       port={PORT}
+                       password={PASSWORD}
+                       """)
+cur = con.cursor()
+# Create a table if not exists
+cur.execute("CREATE TABLE IF NOT EXISTS chats(id serial PRIMARY KEY, prompt varchar, output varchar, time varchar)")
+con.commit()
+
+# Prompt
+prompt = st.chat_input("Talk to my agent")
+if prompt:
+    time = time.strftime("Date: %Y-%m-%d | Time: %H:%M:%S UTC")
+    st.text(f"""
+              User prompt: {prompt}
+              time: {time}
+              """)
+    st.divider()
+    
+    ### Insert into a database
+    output = "hi"
+    SQL = "INSERT INTO chats (prompt, output, time) VALUES(%s, %s, %s);"
+    data = (prompt, output, time)
+    cur.execute(SQL, data)
+    con.commit()
+
+    
+with st.expander("See Previous Conversation"):
+    cur.execute("""
+                SELECT * 
+                FROM chats
+                ORDER BY time DESC
+                """)
+    for id, prompt, output, time in cur.fetchall():
+            st.text(f"""
+                      User prompt: {prompt}
+                      time: {time}
+                      """)
+            st.divider()
+# Close Connection
+cur.close()
+con.close()
+#----------End of Agent Section----------#
