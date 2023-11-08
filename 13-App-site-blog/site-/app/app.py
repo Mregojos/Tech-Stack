@@ -10,6 +10,7 @@ st.set_page_config(page_title="Matt Cloud Tech",
                    page_icon=":cloud:",
                    menu_items={
                        'About':"# Matt Cloud Tech"})
+
 #----------About Me Section----------#
 st.title(":cloud: Matt Cloud Tech")
 st.subheader("", divider="rainbow")
@@ -25,8 +26,28 @@ st.write(":link: :computer: [Personal Website](https://)")
 st.write(":link: :book: [Project Repository](https://)")
 st.write(":link: :notebook: [Blog](https://)")
 st.write(":link: :hand: [Connect with me](https://)")
+#----------End of About Me Section----------#
 
-#----------Notepad----------#
+#----------Portfolio Section----------#
+st.header("Project Collections",divider="rainbow")
+
+st.write("#### :link: [PROJECT TITLE #1](https://)")
+st.caption("Caption")
+with st.expander(f"Learn more"):
+    st.write("Description")
+    
+st.divider()
+
+st.write("#### :link: [PROJECT TITLE #2](https://)")
+st.caption("Caption")
+with st.expander(f"Learn more"):
+    st.write("Description")
+st.divider()
+
+#----------End of Portfolio Section----------#
+
+
+#----------Notepad Section----------#
 # Notepad Section
 # Header
 st.header("Notepad :notebook:",divider="rainbow")
@@ -103,6 +124,7 @@ for id, name, header, note, time in cur.fetchall():
 # Close Connection
 cur.close()
 con.close()
+#----------End of Notepad Section----------#
 
 #----------Counter----------#
 # Title
