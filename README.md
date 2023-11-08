@@ -12,6 +12,8 @@
     | Pipeline Code Security: SonarQUbe
     | Logging, Observability, Monitoring, Alerting: Grafana, Prometheus
     | Diagramming Tool: Draw.io
+    | Database: PostgreSQL
+    | Security: Key Management, Docker Secrets, Terraform Vaults
     
     
 ### Cloud Technology (Google Cloud / GCP Edition)
@@ -96,9 +98,16 @@
 
 ### Database
 * Google Cloud Cloud SQL: https://cloud.google.com/sql
+* PostgreSQL
+* PostgreSQL (Docker Hub)
+* pgAdmin
+* pgAdmin (Docker Hub)
 
 ### Security
 * Google Cloud IAM: https://cloud.google.com/IAM
+* Google Cloud Secret Key
+* Docker Secrets
+* Terraform Vaults
 ---
 
 GitHub Repository: https://github.com/mregojos/tech-stack
