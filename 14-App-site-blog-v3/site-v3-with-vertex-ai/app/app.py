@@ -5,7 +5,28 @@ import os
 import time
 from env import *
 
-#----------Agent Section Only using chat_messgae----------#
+#----------Vertex AI----------#
+import vertexai
+from vertexai.language_models import TextGenerationModel
+
+vertexai.init(project="matt-project-training", location="us-central1")
+parameters = {
+    "candidate_count": 1,
+    "max_output_tokens": 1024,
+    "temperature": 0.2,
+    "top_p": 0.8,
+    "top_k": 40
+}
+model = TextGenerationModel.from_pretrained("text-bison")
+response = model.predict(
+    """Hi""",
+    **parameters
+)
+st.write(f"Response from Model: {response.text}")
+
+#----------End of Vertex AI----------#
+
+#----------Agent Section Only----------#
 import time
 st.header(":computer: Agent :construction:",divider="rainbow")
 st.caption("### Chat with my agent (still under construction)")
@@ -41,8 +62,11 @@ if agent:
         message.write(f":blue[{input_name}]: {prompt}")
         message.caption(f"{time}")
         message = st.chat_message("assistant")
-        output = "I'm still learning :book:. Check back later."
-        message.success(f"Agent: {output}")
+        response = model.predict(prompt,
+            **parameters
+        )
+        output = response.text
+        message.write(output)
         message.caption(f"{time}")
         st.divider()
 
@@ -65,11 +89,10 @@ if agent:
             message.write(f":blue[{name}]: {prompt}")
             message.caption(f"{time}")
             message = st.chat_message("assistant")
-            output = "I'm still learning :book:. Check back later."
-            message.success(f"Agent: {output}")
+            message.write(output)
             message.caption(f"{time}")
 # Close Connection
 cur.close()
 con.close()
-#----------End of Agent Section----------#
+#----------End of Agent Section Only----------#
 
