@@ -53,21 +53,21 @@ if agent:
         con.commit()
 
 
-        with st.expander(f"See Previous Conversation for {input_name}"):
-            cur.execute(f"""
-                        SELECT * 
-                        FROM chats
-                        WHERE name='{input_name}'
-                        ORDER BY time ASC
-                        """)
-            for id, name, prompt, output, time in cur.fetchall():
-                message = st.chat_message("user")
-                message.write(f":blue[{name}]: {prompt}")
-                message.caption(f"{time}")
-                message = st.chat_message("assistant")
-                output = "I'm still learning :book:. Check back later."
-                message.success(f"Agent: {output}")
-                message.caption(f"{time}")
+    with st.expander(f"See Previous Conversation for {input_name}"):
+        cur.execute(f"""
+                    SELECT * 
+                    FROM chats
+                    WHERE name='{input_name}'
+                    ORDER BY time ASC
+                    """)
+        for id, name, prompt, output, time in cur.fetchall():
+            message = st.chat_message("user")
+            message.write(f":blue[{name}]: {prompt}")
+            message.caption(f"{time}")
+            message = st.chat_message("assistant")
+            output = "I'm still learning :book:. Check back later."
+            message.success(f"Agent: {output}")
+            message.caption(f"{time}")
 # Close Connection
 cur.close()
 con.close()
