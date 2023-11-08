@@ -1,0 +1,24 @@
+# Portfolio Site and Blog
+    [- mattcloudtech.com] 
+    - site.mattcloudtech.com
+    - blog.mattcloudtech.com
+
+# Portfolio Project
+    - CI/CD GCP
+    - Infrastructure Automation GCP
+    - MLOps GCP
+    - Data Pipeline GCP
+
+# Tech Stack
+    - Tech Stack
+    - Tech Stack Data ML
+    
+#############
+    - Q&A Fundamentals/Basics
+    - Coding
+    - Related-tools / Tech Stack
+    - System Design
+    - Project Walkthrough
+        STAR
+
+#############
