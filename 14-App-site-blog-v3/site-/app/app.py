@@ -7,7 +7,7 @@ from env import *
 
 #----------Agent Section Only using chat_messgae----------#
 import time
-st.header(":eyeglasses: Agent :construction:",divider="rainbow")
+st.header(":computer: Agent :construction:",divider="rainbow")
 st.caption("### Chat with my agent (still under construction)")
 st.write(f":violet[Your chat will be stored in a database, so use the same name to see your past conversations]")
 st.caption(":warning: :red[Do not add sensitive data.]")
@@ -37,10 +37,13 @@ if agent:
     prompt = st.chat_input("Talk to my agent")
     if prompt:
         time = time.strftime("Date: %Y-%m-%d | Time: %H:%M:%S UTC")
-        st.write(f":blue[{input_name}]: {prompt}")
-        st.caption(f"{time}")
+        message = st.chat_message("user")
+        message.write(f":blue[{input_name}]: {prompt}")
+        message.caption(f"{time}")
+        message = st.chat_message("assistant")
         output = "I'm still learning :book:. Check back later."
-        st.success(f":eyeglasses: Agent: {output}")
+        message.success(f"Agent: {output}")
+        message.caption(f"{time}")
         st.divider()
 
         ### Insert into a database
@@ -55,11 +58,16 @@ if agent:
                         SELECT * 
                         FROM chats
                         WHERE name='{input_name}'
-                        ORDER BY time DESC
+                        ORDER BY time ASC
                         """)
             for id, name, prompt, output, time in cur.fetchall():
-                    st.write(f":blue[{name}]: {prompt}")
-                    st.caption(f"{time}")
+                message = st.chat_message("user")
+                message.write(f":blue[{name}]: {prompt}")
+                message.caption(f"{time}")
+                message = st.chat_message("assistant")
+                output = "I'm still learning :book:. Check back later."
+                message.success(f"Agent: {output}")
+                message.caption(f"{time}")
 # Close Connection
 cur.close()
 con.close()
