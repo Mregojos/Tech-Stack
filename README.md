@@ -1,7 +1,7 @@
 # Tech Stack for Cloud, DevOps, and SRE (Google Cloud / GCP Edition)
 
 ### Tech Stack for Cloud, DevOps, and SRE (Open-Source)
-    | Programming Language (Automation): Shell/Bash, Python, SQL
+    | Programming Language (Automation): Python, Shell/Bash, SQL
     | Version Control: Git, GitHub, Bitbucket
     | Infrastructure as Code: Terraform
     | Configuration Management: Ansible
@@ -13,7 +13,7 @@
     | Logging, Observability, Monitoring, Alerting: Grafana, Prometheus
     | Diagramming Tool: Draw.io
     | Database: PostgreSQL
-    | Security: Key Management, Docker Secrets, Terraform Vaults
+    | Security: Docker Secrets, Terraform Vaults
     
     
 ### Cloud Technology (Google Cloud / GCP Edition)
