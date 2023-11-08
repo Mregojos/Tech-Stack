@@ -19,14 +19,7 @@ st.write("""
         ### Good day :wave:.
         ### My name is :blue[Matt]. I am a Cloud Technology Enthusiast.
         ### Currently, I am learning and building Cloud Infrastructure, Data and CI/CD Pipelines, and Intelligent Systems. 
-        """)
-agent = st.toggle('**Talk to my Agent**')
-if agent:
-    prompt = st.chat_input("What do you want to say?")
-    if prompt:
-        with st.expander("See Conversations"):
-            st.write(f"User prompt: {prompt}")
-            
+        """) 
 st.divider()
 st.write(":link: :computer: [Personal Website](https://)")
 st.write(":link: :book: [Project Repository](https://)")
@@ -85,8 +78,8 @@ if st.button("Add a note"):
     st.write(f""" \n
             ##### :pencil: {header} \n
             #### {note} \n
-            :man: {name} \n
-            :watch: {time}""")
+            :man: {name} \n""")
+    st.caption(f":watch: {time}")
     st.success("Successfully Added.")
     # st.balloons()
     ### Insert into adatabase
@@ -108,8 +101,8 @@ for id, name, header, note, time in cur.fetchall():
     st.write(f""" \n
             ##### :pencil: {header} \n
             #### {note} \n
-            :man: {name} \n
-            :watch: {time}""")
+            :man: {name} \n""")
+    st.caption(f":watch: {time}")
 
     with st.expander(f"Edit or Delete (ID #: {id})"):
         name = st.text_input(f"Your Name (ID #: {id})", name)
@@ -193,12 +186,13 @@ con.close()
 
 #----------Agent Section----------#
 import time
-st.header("Agent",divider="rainbow")
-st.caption("### Chat with my agent")
-input_name = st.text_input("Your Name:")
-if st.button("name"):
-    name = input_name
-    st.write(f"Your Name for this chat is {name}")
+st.header(":eyeglasses: Agent :construction:",divider="rainbow")
+st.caption("### Chat with my agent (still under construction)")
+st.write(f":violet[Your chat will be stored in a database, so use the same name to see your past conversations]")
+st.caption(":warning: :red[Do not add sensitive data.]")
+
+
+               
 # Variable
 database_name = DBNAME
 # Connect to a database
@@ -211,39 +205,40 @@ con = psycopg2.connect(f"""
                        """)
 cur = con.cursor()
 # Create a table if not exists
-cur.execute("CREATE TABLE IF NOT EXISTS chats(id serial PRIMARY KEY, prompt varchar, output varchar, time varchar)")
+cur.execute("CREATE TABLE IF NOT EXISTS chats(id serial PRIMARY KEY, name varchar, prompt varchar, output varchar, time varchar)")
 con.commit()
 
 # Prompt
-prompt = st.chat_input("Talk to my agent")
-if prompt:
-    time = time.strftime("Date: %Y-%m-%d | Time: %H:%M:%S UTC")
-    st.text(f"""
-              User prompt: {prompt}
-              time: {time}
-              """)
-    st.divider()
-    
-    ### Insert into a database
-    output = "hi"
-    SQL = "INSERT INTO chats (prompt, output, time) VALUES(%s, %s, %s);"
-    data = (prompt, output, time)
-    cur.execute(SQL, data)
-    con.commit()
+input_name = st.text_input("Your Name:")
+agent = st.toggle("**Let's go**")
+if agent:
+    st.write(f"Your name for this chat is :blue[{input_name}]")
+    prompt = st.chat_input("Talk to my agent")
+    if prompt:
+        time = time.strftime("Date: %Y-%m-%d | Time: %H:%M:%S UTC")
+        st.write(f":blue[{input_name}]: {prompt}")
+        st.caption(f"{time}")
+        output = "I'm still learning :book:. Check back later."
+        st.success(f":eyeglasses: Agent: {output}")
+        st.divider()
 
-    
-with st.expander("See Previous Conversation"):
-    cur.execute("""
-                SELECT * 
-                FROM chats
-                ORDER BY time DESC
-                """)
-    for id, prompt, output, time in cur.fetchall():
-            st.text(f"""
-                      User prompt: {prompt}
-                      time: {time}
-                      """)
-            st.divider()
+        ### Insert into a database
+        SQL = "INSERT INTO chats (name, prompt, output, time) VALUES(%s, %s, %s, %s);"
+        data = (input_name, prompt, output, time)
+        cur.execute(SQL, data)
+        con.commit()
+
+
+        with st.expander(f"See Previous Conversation for {input_name}"):
+            cur.execute(f"""
+                        SELECT * 
+                        FROM chats
+                        WHERE name='{input_name}'
+                        ORDER BY time DESC
+                        """)
+            for id, name, prompt, output, time in cur.fetchall():
+                    st.write(f":blue[{name}]: {prompt}")
+                    st.caption(f"{time}")
 # Close Connection
 cur.close()
 con.close()
