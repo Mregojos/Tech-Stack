@@ -19,11 +19,12 @@ parameters = {
     "top_k": 40
 }
 model = TextGenerationModel.from_pretrained("text-bison")
-response = model.predict(
-    """Hi""",
-    **parameters
-)
-st.write(f"Response from Model: {response.text}")
+
+# response = model.predict(
+#    """Hi""",
+#    **parameters
+# )
+# st.write(f"Response from Model: {response.text}")
 
 #----------End of Vertex AI----------#
 
