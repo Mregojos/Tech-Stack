@@ -1,6 +1,6 @@
 # DB Credentials
 DBNAME="matt"
 USER='matt'
-HOST='34.27.0.180'
+HOST=''
 PORT='5000'
 PASSWORD='password'
