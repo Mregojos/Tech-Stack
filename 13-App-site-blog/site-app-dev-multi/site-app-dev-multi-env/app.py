@@ -5,8 +5,16 @@ import os
 import time
 import vertexai
 from vertexai.language_models import TextGenerationModel
-from env import *
+# from env import *
 from streamlit_option_menu import option_menu
+
+# Database Credentials
+DBNAME=os.getenv("DBNAME")
+USER=os.getenv("USER")
+HOST= os.getenv("HOST")
+DBPORT=os.getenv("DBPORT")
+DBPASSWORD=os.getenv("DBPASSWORD")
+
 
 #----------Page Configuration----------# 
 st.set_page_config(page_title="Matt Cloud Tech",
@@ -76,8 +84,8 @@ if selected == "Notepad":
                            dbname={DBNAME}
                            user={USER}
                            host={HOST}
-                           port={PORT}
-                           password={PASSWORD}
+                           port={DBPORT}
+                           password={DBPASSWORD}
                            """)
     cur = con.cursor()
 
@@ -153,8 +161,8 @@ if selected == "Counter":
                            dbname={DBNAME}
                            user={USER}
                            host={HOST}
-                           port={PORT}
-                           password={PASSWORD}
+                           port={DBPORT}
+                           password={DBPASSWORD}
                            """)
     cur = con.cursor()
     # Create a table if not exists
@@ -232,8 +240,8 @@ if selected == "Agent":
                            dbname={DBNAME}
                            user={USER}
                            host={HOST}
-                           port={PORT}
-                           password={PASSWORD}
+                           port={DBPORT}
+                           password={DBPASSWORD}
                            """)
     cur = con.cursor()
     # Create a table if not exists
