@@ -160,10 +160,17 @@ with st.expander(' :watch: Counter'):
                 SELECT SUM(view) 
                 FROM counter
                 """)
-    st.write(f"### Total views: **{cur.fetchone()[0]}**")
-    # TODO: Total views today
+    st.write(f"#### Total views: **{cur.fetchone()[0]}**")
     # Current view
     st.write(f"Current: {time}")
+    # Total views today
+    time_date = time[0:15]
+    cur.execute(f"""
+                SELECT SUM(view) 
+                FROM counter
+                WHERE time LIKE '{time_date}%'
+                """)
+    st.write(f"#### Total views today: **{cur.fetchone()[0]}**")
     # Previous views
     st.divider()
     views = st.toggle("See Previous Views")
@@ -183,9 +190,19 @@ with st.expander(' :watch: Counter'):
     con.close()
 #----------End of Counter----------#
 
+
+#----------External links---------#
+with st.expander(' :link: External Links'):
+    st.write(":link: :computer: [Personal Website](https://)")
+    st.write(":link: :book: [Project Repository](https://)")
+    st.write(":link: :notebook: [Blog](https://)")
+    st.write(":link: :hand: [Connect with me](https://)")
+#----------End of External links---------#
+
 #----------Agent Section----------#
 #----------Vertex AI----------#
-with st.expander(' :computer: Agent (Talk to my Intelligent Assistant :technologist:)'):
+agent = st.toggle(' :computer: Agent (Talk to my Intelligent Assistant :technologist:)')
+if agent:
     vertexai.init(project="matt-project-training", location="us-central1")
     parameters = {
         "candidate_count": 1,
@@ -269,11 +286,3 @@ with st.expander(' :computer: Agent (Talk to my Intelligent Assistant :technolog
     cur.close()
     con.close()
 #----------End of Agent Section----------#
-
-#----------External links---------#
-with st.expander(' :link: External Links'):
-    st.write(":link: :computer: [Personal Website](https://)")
-    st.write(":link: :book: [Project Repository](https://)")
-    st.write(":link: :notebook: [Blog](https://)")
-    st.write(":link: :hand: [Connect with me](https://)")
-#----------End of External links---------#
