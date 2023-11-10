@@ -201,7 +201,8 @@ with st.expander(' :link: External Links'):
 
 #----------Agent Section----------#
 #----------Vertex AI----------#
-agent = st.toggle(' :computer: Agent (Talk to my Intelligent Assistant :technologist:)')
+agent = st.checkbox(' :computer: Agent (Talk to my Intelligent Assistant :technologist:)')
+# agent = st.toggle(' :computer: Agent (Talk to my Intelligent Assistant :technologist:)')
 if agent:
     vertexai.init(project="matt-project-training", location="us-central1")
     parameters = {
