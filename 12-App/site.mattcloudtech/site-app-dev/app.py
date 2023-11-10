@@ -200,13 +200,11 @@ with st.expander(' :computer: Agent'):
 
     #----------End of Vertex AI----------#
     import time
-    st.header(":computer: Agent :construction:",divider="rainbow")
-    st.caption("### Chat with my agent (still under construction)")
-    st.write(f":violet[Your chat will be stored in a database, so use the same name to see your past conversations]")
+    st.header(":computer: Agent ",divider="rainbow")
+    st.caption("### Chat with my agent")
+    st.write(f":violet[Your chat will be stored in a database, use the same name to see your past conversations.]")
     st.caption(":warning: :red[Do not add sensitive data.]")
-
-
-
+    
     # Variable
     database_name = DBNAME
     # Connect to a database
