@@ -161,12 +161,13 @@ with st.expander(' :watch: Counter'):
                 FROM counter
                 """)
     st.write(f"### Total views: **{cur.fetchone()[0]}**")
-
+    # TODO: Total views today
     # Current view
     st.write(f"Current: {time}")
     # Previous views
     st.divider()
     views = st.toggle("See Previous Views")
+    # TODO: Total views today (Visualization)
     if views:
         st.write("**Previous Views**")
         cur.execute("""
