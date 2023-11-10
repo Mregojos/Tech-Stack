@@ -287,3 +287,8 @@ if agent:
     cur.close()
     con.close()
 #----------End of Agent Section----------#
+
+# Close Connection
+cur.close()
+con.close()
+#----------End of Agent Section----------#
