@@ -86,7 +86,7 @@ with st.expander(' :pencil: Notepad'):
 
     # Previous Notes 
     st.divider()
-    notes = st.toggle("See previous notes")
+    notes = st.checkbox("See previous notes")
     if notes:
         st.write("### **:gray[Previous Notes]**")
         cur.execute("""
@@ -173,7 +173,7 @@ with st.expander(' :watch: Counter'):
     st.write(f"#### Total views today: **{cur.fetchone()[0]}**")
     # Previous views
     st.divider()
-    views = st.toggle("See Previous Views")
+    views = st.checkbox("See Previous Views")
     # TODO: Total views today (Visualization)
     if views:
         st.write("**Previous Views**")
