@@ -51,11 +51,11 @@ with st.expander(' :notebook: Portfolio'):
         st.divider()
     
     # Add new project
-    add = st.checkbox("Modify a project")
+    add = st.checkbox("Modify")
     if add:
         password = st.text_input("Password")
-        if password == "matt":
-            modify = st.text_input("Add or Edit or Delete")
+        if password == PASSWORD:
+            modify = st.text_input("Add or Delete")
             if modify == "Add":
                 project_name = st.text_input("Project Name")
                 description = st.text_input("Description")
