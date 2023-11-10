@@ -11,7 +11,7 @@ from env import *
 st.set_page_config(page_title="Matt Cloud Tech",
                    page_icon=":cloud:",
                    menu_items={
-                       'About':"# Matt Cloud Tech Version"})
+                       'About':"# Matt Cloud Tech"})
 
 #----------About Me Section----------#
 st.title(":cloud: Matt Cloud Tech")
@@ -19,7 +19,7 @@ st.header("", divider="rainbow")
 
 st.write("""
         ### Good day :wave:.
-        ### My name is :blue[Matt]. I am a Cloud Technology Enthusiast.
+        ### My name is :blue[Matt]. I am a Cloud Technology Enthusiast. :technologist:
         ### Currently, I am learning and building Cloud Infrastructure, Data and CI/CD Pipelines, and Intelligent Systems. 
         """) 
 st.divider()
@@ -86,36 +86,39 @@ with st.expander(' :pencil: Notepad'):
 
     # Previous Notes 
     st.divider()
-    st.write("### *Previous Notes*")
-    # Write the data
-    cur.execute("""
-                SELECT * 
-                FROM notes
-                ORDER BY time DESC
-                """)
-    for id, name, header, note, time in cur.fetchall():
-        st.write(f""" \n
-                ##### :pencil: {header} \n
-                #### {note} \n
-                :man: {name} \n""")
-        st.caption(f":watch: {time}")
+    notes = st.toggle("See previous notes")
+    if notes:
+        st.write("### **:gray[Previous Notes]**")
+        cur.execute("""
+                    SELECT * 
+                    FROM notes
+                    ORDER BY time DESC
+                    """)
+        for id, name, header, note, time in cur.fetchall():
+            st.write(f""" \n
+                    ##### :pencil: {header} \n
+                    #### {note} \n
+                    :man: {name} \n""")
+            st.caption(f":watch: {time}")
 
-        modify = st.toggle(f"Edit or Delete (ID #: {id})")
-        if modify:
-            name = st.text_input(f"Your Name (ID #: {id})", name)
-            header = st.text_input(f"Header (ID #: {id})", header)
-            note = st.text_area(f"Note (ID #: {id})", note)
-            if st.button(f"UPDATE ID #: {id}"):
-                SQL = " UPDATE notes SET id=%s, name=%s, header=%s, note=%s WHERE id = %s"
-                data = (id, name, header, note, id)
-                cur.execute(SQL, data)
-                con.commit()
-                st.success("Successfully Edited.")
-            if st.button(f"DELETE ID #: {id}"):
-                cur.execute(f"DELETE FROM notes WHERE id = {id}")
-                con.commit()
-                st.success("Successfully Deleted.")
-        st.subheader("",divider="gray")
+            modify = st.toggle(f"Edit or Delete (ID #: {id})")
+            if modify:
+                name = st.text_input(f"Your Name (ID #: {id})", name)
+                header = st.text_input(f"Header (ID #: {id})", header)
+                note = st.text_area(f"Note (ID #: {id})", note)
+                if st.button(f"UPDATE ID #: {id}"):
+                    SQL = " UPDATE notes SET id=%s, name=%s, header=%s, note=%s WHERE id = %s"
+                    data = (id, name, header, note, id)
+                    cur.execute(SQL, data)
+                    con.commit()
+                    st.success("Successfully Edited.")
+                    st.button(":blue[Done]")
+                if st.button(f"DELETE ID #: {id}"):
+                    cur.execute(f"DELETE FROM notes WHERE id = {id}")
+                    con.commit()
+                    st.success("Successfully Deleted.")
+                    st.button(":blue[Done]")
+            st.subheader("",divider="gray")
 
     # Close Connection
     cur.close()
@@ -181,7 +184,7 @@ with st.expander(' :watch: Counter'):
 
 #----------Agent Section----------#
 #----------Vertex AI----------#
-with st.expander(' :computer: Agent'):
+with st.expander(' :computer: Agent (Talk to my Intelligent Assistant :technologist:)'):
     vertexai.init(project="matt-project-training", location="us-central1")
     parameters = {
         "candidate_count": 1,
