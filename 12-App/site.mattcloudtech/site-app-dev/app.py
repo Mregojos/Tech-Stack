@@ -22,26 +22,62 @@ st.write("""
         ### My name is :blue[Matt]. I am a Cloud Technology Enthusiast. :technologist:
         ### Currently, I am learning and building Cloud Infrastructure, Data and CI/CD Pipelines, and Intelligent Systems. 
         """) 
-st.divider()
+# st.divider()
 #----------End of About Me Section----------#
 
 #----------Portfolio Section----------#
 with st.expander(' :notebook: Portfolio'):
-    st.header("Project Collections",divider="rainbow")
+    # Connect to a database
+    con = psycopg2.connect(f"""
+                           dbname={DBNAME}
+                           user={USER}
+                           host={HOST}
+                           port={PORT}
+                           password={PASSWORD}
+                           """)
+    cur = con.cursor()
 
-    st.write("##### :link: [PROJECT TITLE #1](https://)")
-    st.write("Caption")
-    # with st.expander(f"Learn more"):
-    #    st.write("Description")
-
-    st.divider()
-
-    st.write("##### :link: [PROJECT TITLE #2](https://)")
-    st.write("Caption")
-    # with st.expander(f"Learn more"):
-    #    st.write("Description")
-    st.divider()
-
+    # Create a table if not exists
+    cur.execute("CREATE TABLE IF NOT EXISTS portfolio(id serial PRIMARY KEY, project_name varchar, description varchar, link varchar)")
+    con.commit()    
+    st.write("### Project Collection")
+    cur.execute("""
+                SELECT * 
+                FROM portfolio
+                """)
+    for id, project_name, description, link in cur.fetchall():
+        st.write(f"### [{project_name}]({link})")
+        st.write(f"{description}")
+        st.divider()
+    
+    # Add new project
+    add = st.checkbox("Modify a project")
+    if add:
+        password = st.text_input("Password")
+        if password == "matt":
+            modify = st.text_input("Add or Edit or Delete")
+            if modify == "Add":
+                project_name = st.text_input("Project Name")
+                description = st.text_input("Description")
+                link = st.text_input("Link")
+                ### Insert into adatabase
+                save = st.button("Save")
+                if save:
+                    SQL = "INSERT INTO portfolio (project_name, description, link) VALUES(%s, %s, %s);"
+                    data = (project_name, description, link)
+                    cur.execute(SQL, data)
+                    con.commit()
+                    st.write("Successfully Added.")
+                    st.button("Done")
+            elif modify == "Delete":
+                project_name = st.text_input("Project Name")
+                delete = st.button("Delete")
+                if delete:
+                    cur.execute(f"DELETE FROM portfolio WHERE project_name = '{project_name}';")
+                    con.commit()
+                    st.success("Successfully Deleted.")
+                    st.button("Done")
+            
 #----------End of Portfolio Section----------#
 
 #----------Notepad Section----------#
